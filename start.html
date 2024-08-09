@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Question Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <a href="home.html">
+            <img src="images/logo.png" alt="QDS Logo" style="max-height: 60px; width: auto; display: block; margin: 0 auto;">
+        </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="resource.html">Resource</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <h1>Welcome to the Important Question Detector</h1>
+        <p>Select your course and subject to see important questions.</p>
+        <select id="courseSelect" onchange="updateSubjects()">
+            <!-- Course options will be populated here -->
+        </select>
+        <select id="subjectSelect" onchange="displayQuestions()">
+            <!-- Subject options will be populated here -->
+        </select>
+        <div id="questionDisplay">
+            <!-- Important questions will be displayed here -->
+        </div>
+    </div>
+    <script src="start.js"></script>
+</body>
+</html>

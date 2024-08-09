@@ -1,0 +1,45 @@
+document.addEventListener('DOMContentLoaded', function() {
+    populateCourses();
+});
+
+function populateCourses() {
+    const courses = ['Course 1', 'Course 2', 'Course 3']; // Example courses
+    const courseSelect = document.getElementById('courseSelect');
+    courses.forEach(course => {
+        let option = document.createElement('option');
+        option.value = course;
+        option.textContent = course;
+        courseSelect.appendChild(option);
+    });
+}
+
+function updateSubjects() {
+    // This function will populate subjects based on the selected course
+    const subjects = {'Course 1': ['Subject 1A', 'Subject 1B'], 'Course 2': ['Subject 2A', 'Subject 2B']}; // Example subjects
+    const selectedCourse = document.getElementById('courseSelect').value;
+    const subjectSelect = document.getElementById('subjectSelect');
+    subjectSelect.innerHTML = ''; // Clear current options
+    subjects[selectedCourse].forEach(subject => {
+        let option = document.createElement('option');
+        option.value = subject;
+        option.textContent = subject;
+        subjectSelect.appendChild(option);
+    });
+}
+
+function displayQuestions() {
+    // This function will display important questions based on the selected subject
+    const questions = {
+        'Subject 1A': ['Question 1', 'Question 2'],
+        'Subject 1B': ['Question 3', 'Question 4'],
+        // Add more subjects and questions as needed
+    };
+    const selectedSubject = document.getElementById('subjectSelect').value;
+    const questionDisplay = document.getElementById('questionDisplay');
+    questionDisplay.innerHTML = ''; // Clear current display
+    questions[selectedSubject].forEach(question => {
+        let para = document.createElement('p');
+        para.textContent = question;
+        questionDisplay.appendChild(para);
+    });
+}
